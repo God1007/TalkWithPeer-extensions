@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "public-search",
+  "type": "tool",
+  "name": "公共消息搜索",
+  "version": "1.0.0",
+  "description": "按关键词搜索本会话公共记录，返回明确标记的片段与来源。",
+  "entry": "definition.json"
+}

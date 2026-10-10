@@ -1,0 +1,5 @@
+{
+  "event": "before_prompt",
+  "operation": "note",
+  "text": "把 checkpoint 当作待核对的转述，重要结论应指向已见原文。此标注不修改用户约束或投票。"
+}

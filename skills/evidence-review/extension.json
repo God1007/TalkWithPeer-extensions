@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "evidence-review",
+  "type": "skill",
+  "name": "证据核对",
+  "version": "1.0.0",
+  "description": "讨论引用历史、摘要或项目材料时，区分已见证据与未验证判断。",
+  "entry": "SKILL.md"
+}

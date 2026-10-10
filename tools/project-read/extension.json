@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "project-read",
+  "type": "tool",
+  "name": "项目文本读取",
+  "version": "1.0.0",
+  "description": "只读所选项目的文本快照，附带路径与内容哈希。",
+  "entry": "definition.json"
+}

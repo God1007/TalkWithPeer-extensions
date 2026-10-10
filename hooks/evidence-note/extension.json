@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "evidence-note",
+  "type": "hook",
+  "name": "证据边界提示",
+  "version": "1.0.0",
+  "description": "构建输入前增加非权威的证据核对标注。",
+  "entry": "definition.json"
+}

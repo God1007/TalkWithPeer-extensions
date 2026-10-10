@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "reply-audit",
+  "type": "hook",
+  "name": "回复审计回调",
+  "version": "1.0.0",
+  "description": "有效公开回复发布前记录锁定扩展版本的 hook 执行。",
+  "entry": "definition.json"
+}
