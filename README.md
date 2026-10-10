@@ -30,14 +30,15 @@ extension.json 字段：schemaVersion=1、id、type、name、version、descripti
 
 ## 一期内容
 
-| 包              | 类型  | 用途                                     |
-| --------------- | ----- | ---------------------------------------- |
-| evidence-review | skill | 核对证据，区分原文、摘要、推断与未验证项 |
-| public-read     | tool  | 本会话公共原文读取，每次 1–3 条          |
-| public-search   | tool  | 公共消息关键词搜索，明确标记片段         |
-| project-read    | tool  | 所选项目的只读文本快照，附带哈希         |
-| evidence-note   | hook  | before_prompt 注入非权威的证据边界标注   |
-| reply-audit     | hook  | after_reply 记录锁定版本执行             |
+| 包              | 类型  | 用途                                           |
+| --------------- | ----- | ---------------------------------------------- |
+| evidence-review | skill | 核对证据，区分原文、摘要、推断与未验证项       |
+| simplify-plan   | skill | 方案讨论时核对复用依据，说明必要改动与维护成本 |
+| public-read     | tool  | 本会话公共原文读取，每次 1–3 条                |
+| public-search   | tool  | 公共消息关键词搜索，明确标记片段               |
+| project-read    | tool  | 所选项目的只读文本快照，附带哈希               |
+| evidence-note   | hook  | before_prompt 注入非权威的证据边界标注         |
+| reply-audit     | hook  | after_reply 记录锁定版本执行                   |
 
 一期工具定义只选择平台可信实现的 public_read / public_search / project_read。它们不运行任意 shell、JavaScript 或 Python。
 
@@ -52,6 +53,14 @@ Hook 支持 before_prompt、before_tool、after_tool、after_reply、after_compa
     {"event":"before_tool","operation":"deny","when":{"toolId":"project-read"}}
 
 启用的 skill 作为审查后的工作流程传入平台构建的输入，不覆盖用户约束。平台 tool 与 hooks 作用于平台运行循环；原生 Agent 内部自己的工具调用不由这些 hook 接管。
+
+## 使用方案简化 skill
+
+在扩展库中找到“方案简化”，查看源文件、批准当前哈希后启用。讨论时可以写：
+
+    使用 simplify-plan 讨论下面的方案，重点降低复杂度、复用现有能力；需要修改时说明必要的最小改动与验证方式。
+
+启用的 skill 正文随平台输入提供，成员按适用条件使用；当前不是按名称动态加载。它不增加专门的讨论模式，也不要求普通任务输出方案字段。讨论中的改动是建议清单，不自动执行文件修改。
 
 ## 贡献
 

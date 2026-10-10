@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "simplify-plan",
+  "type": "skill",
+  "name": "方案简化",
+  "version": "1.0.0",
+  "description": "方案讨论与审查时核对复用证据，降低整体复杂度，确定必要的最小改动并保留未确认事项。",
+  "entry": "SKILL.md"
+}
